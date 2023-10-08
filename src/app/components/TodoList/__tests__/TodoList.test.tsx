@@ -22,7 +22,6 @@ describe("TodoList", () => {
   it('should render "No Todos Available" when the array is empty', () => {
     render(<TodoList todos={[]} setTodos={mockSetTodos} />);
 
-    //ACT
     const message = screen.getByText("No Todos Available");
 
     expect(message).toBeInTheDocument();
@@ -31,7 +30,6 @@ describe("TodoList", () => {
   it("should render a list with the correct number of items", () => {
     render(<TodoList todos={mockTodos} setTodos={mockSetTodos} />);
 
-    //ACT
     const todosArray = screen.getAllByRole("article");
 
     expect(todosArray.length).toBe(2);
@@ -40,7 +38,6 @@ describe("TodoList", () => {
   it("should render the todos in the correct order", () => {
     render(<TodoList todos={mockTodos} setTodos={mockSetTodos} />);
 
-    //ACT
     const firstItem = screen.getAllByTestId("todo-item")[0];
 
     expect(firstItem).toHaveTextContent("Get Coffee ☕☕☕");

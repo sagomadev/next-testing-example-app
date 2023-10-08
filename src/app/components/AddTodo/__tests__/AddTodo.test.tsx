@@ -9,7 +9,7 @@ describe("AddTodo", () => {
     it("should render the input", () => {
       render(<AddTodo setTodos={mockSetTodos} />);
 
-      const input = screen.getByPlaceholderText("New Todo"); //ACT
+      const input = screen.getByPlaceholderText("New Todo");
 
       expect(input).toBeInTheDocument();
     });
@@ -17,7 +17,6 @@ describe("AddTodo", () => {
     it("should render a disabled submit button", () => {
       render(<AddTodo setTodos={mockSetTodos} />);
 
-      //ACT
       const button = screen.getByRole("button", {
         name: "Submit",
       });
@@ -30,7 +29,7 @@ describe("AddTodo", () => {
     it("should be able to add text to the input", async () => {
       render(<AddTodo setTodos={mockSetTodos} />);
 
-      const input = screen.getByPlaceholderText("New Todo"); //ACT
+      const input = screen.getByPlaceholderText("New Todo");
       await userEvent.type(input, "hey there");
       expect(input).toHaveValue("hey there");
     });
@@ -38,7 +37,7 @@ describe("AddTodo", () => {
     it("should enable the submit button when text is input", async () => {
       render(<AddTodo setTodos={mockSetTodos} />);
 
-      const input = screen.getByPlaceholderText("New Todo"); //ACT
+      const input = screen.getByPlaceholderText("New Todo");
       await userEvent.type(input, "hey there");
 
       const button = screen.getByRole("button", {
@@ -51,7 +50,7 @@ describe("AddTodo", () => {
     it("should empty the text input when submitted", async () => {
       render(<AddTodo setTodos={mockSetTodos} />);
 
-      const input = screen.getByPlaceholderText("New Todo"); //ACT
+      const input = screen.getByPlaceholderText("New Todo");
       await userEvent.type(input, "hey there");
       const button = screen.getByRole("button", {
         name: "Submit",
@@ -64,7 +63,7 @@ describe("AddTodo", () => {
     it("should call setTodos when submitted", async () => {
       render(<AddTodo setTodos={mockSetTodos} />);
 
-      const input = screen.getByPlaceholderText("New Todo"); //ACT
+      const input = screen.getByPlaceholderText("New Todo");
       await userEvent.type(input, "hey there");
       const button = screen.getByRole("button", {
         name: "Submit",

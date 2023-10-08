@@ -16,7 +16,6 @@ describe("AddTodo", () => {
     it("should render an article", () => {
       render(<TodoItem todo={mockTodo} setTodos={mockSetTodos} />);
 
-      //ACT
       const article = screen.getByRole("article");
 
       expect(article).toBeInTheDocument();
@@ -25,7 +24,6 @@ describe("AddTodo", () => {
     it("should render a label", () => {
       render(<TodoItem todo={mockTodo} setTodos={mockSetTodos} />);
 
-      //ACT
       const label = screen.getByTestId("todo-item");
 
       expect(label).toBeInTheDocument();
@@ -34,7 +32,6 @@ describe("AddTodo", () => {
     it("should render a checkbox", () => {
       render(<TodoItem todo={mockTodo} setTodos={mockSetTodos} />);
 
-      //ACT
       const checkbox = screen.getByRole("checkbox");
 
       expect(checkbox).toBeInTheDocument();
@@ -43,7 +40,6 @@ describe("AddTodo", () => {
     it("should render a button", () => {
       render(<TodoItem todo={mockTodo} setTodos={mockSetTodos} />);
 
-      //ACT
       const button = screen.getByRole("button");
 
       expect(button).toBeInTheDocument();
@@ -54,7 +50,6 @@ describe("AddTodo", () => {
     it("should call setTodos when checkbox clicked", async () => {
       render(<TodoItem todo={mockTodo} setTodos={mockSetTodos} />);
 
-      //ACT
       const checkbox = screen.getByRole("checkbox");
       await userEvent.click(checkbox);
 
@@ -64,7 +59,6 @@ describe("AddTodo", () => {
     it("should call setTodos when button clicked", async () => {
       render(<TodoItem todo={mockTodo} setTodos={mockSetTodos} />);
 
-      //ACT
       const button = screen.getByRole("button");
       await userEvent.click(button);
 

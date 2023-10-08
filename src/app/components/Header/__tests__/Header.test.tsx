@@ -5,7 +5,6 @@ describe("Header", () => {
   it('should render the "Next Todos" heading', () => {
     render(<Header title="Next Todos" />);
 
-    //ACT
     const header = screen.getByRole("heading", {
       name: "Next Todos",
     });
@@ -16,7 +15,6 @@ describe("Header", () => {
   it('should render "Dave" as a heading', async () => {
     render(<Header title="Dave" />);
 
-    //ACT
     const header = screen.getByRole("heading", {
       name: "Dave",
     });
